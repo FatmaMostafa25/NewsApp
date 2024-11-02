@@ -8,22 +8,47 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+  //MARK: - IBOutlets
+  @IBOutlet private weak var screenTitle: UILabel!
+  @IBOutlet private weak var articlesSearchBar: UISearchBar!
+  @IBOutlet private weak var articlesDatePicker: UIDatePicker!
+  @IBOutlet private weak var homeArticlesCollectionView: UICollectionView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureViews()
+  }
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+//MARK: - IBActions
+private extension HomeViewController {
+  
+}
 
-        // Do any additional setup after loading the view.
-    }
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 8
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as! ArticlesCollectionViewCell
+    return cell
+  }
+}
+//MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: (UIScreen.main.bounds.size.width/2)-27.5,height: (UIScreen.main.bounds.size.height/3)-44)
+  }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+extension HomeViewController {
+  
+  func configureViews() {
+    homeArticlesCollectionView.dataSource = self
+    homeArticlesCollectionView.delegate = self
+    let nib = UINib(nibName: "ArticlesCollectionViewCell", bundle: nil)
+    homeArticlesCollectionView.register(nib, forCellWithReuseIdentifier: "articleCell")
+  }
 }

@@ -21,6 +21,8 @@
 		4FA1CE122CD637CA0027A90D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE112CD637CA0027A90D /* Constants.swift */; };
 		4FA1CE142CD650190027A90D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE132CD650190027A90D /* CoreDataManager.swift */; };
 		4FA1CE162CD650520027A90D /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE152CD650520027A90D /* Articles.swift */; };
+		4FA1CE192CD65FFA0027A90D /* ArticlesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE172CD65FFA0027A90D /* ArticlesCollectionViewCell.swift */; };
+		4FA1CE1A2CD65FFA0027A90D /* ArticlesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1CE182CD65FFA0027A90D /* ArticlesCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +55,14 @@
 		4FA1CDEA2CD62A6B0027A90D /* NewsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA1CDEE2CD62A6B0027A90D /* NewsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITests.swift; sourceTree = "<group>"; };
 		4FA1CDF02CD62A6B0027A90D /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4FA1CE062CD62E0B0027A90D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4FA1CE062CD62E0B0027A90D /* HomeViewController.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4FA1CE072CD62E0B0027A90D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		4FA1CE0F2CD634440027A90D /* NetworkManager.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4FA1CE112CD637CA0027A90D /* Constants.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4FA1CE132CD650190027A90D /* CoreDataManager.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; tabWidth = 2; };
 		4FA1CE152CD650520027A90D /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		4FA1CE172CD65FFA0027A90D /* ArticlesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesCollectionViewCell.swift; sourceTree = "<group>"; };
+		4FA1CE182CD65FFA0027A90D /* ArticlesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticlesCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +239,8 @@
 		4FA1CE0C2CD62FB20027A90D /* ReusableCells */ = {
 			isa = PBXGroup;
 			children = (
+				4FA1CE172CD65FFA0027A90D /* ArticlesCollectionViewCell.swift */,
+				4FA1CE182CD65FFA0027A90D /* ArticlesCollectionViewCell.xib */,
 			);
 			name = ReusableCells;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FA1CDDA2CD62A6B0027A90D /* LaunchScreen.storyboard in Resources */,
+				4FA1CE1A2CD65FFA0027A90D /* ArticlesCollectionViewCell.xib in Resources */,
 				4FA1CDD72CD62A6B0027A90D /* Assets.xcassets in Resources */,
 				4FA1CE092CD62E0B0027A90D /* HomeViewController.xib in Resources */,
 			);
@@ -391,6 +398,7 @@
 				4FA1CE102CD634440027A90D /* NetworkManager.swift in Sources */,
 				4FA1CDCD2CD62A6A0027A90D /* SceneDelegate.swift in Sources */,
 				4FA1CE082CD62E0B0027A90D /* HomeViewController.swift in Sources */,
+				4FA1CE192CD65FFA0027A90D /* ArticlesCollectionViewCell.swift in Sources */,
 				4FA1CE142CD650190027A90D /* CoreDataManager.swift in Sources */,
 				4FA1CE122CD637CA0027A90D /* Constants.swift in Sources */,
 			);
