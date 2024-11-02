@@ -17,6 +17,8 @@
 		4FA1CDF12CD62A6B0027A90D /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CDF02CD62A6B0027A90D /* NewsAppUITestsLaunchTests.swift */; };
 		4FA1CE082CD62E0B0027A90D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE062CD62E0B0027A90D /* HomeViewController.swift */; };
 		4FA1CE092CD62E0B0027A90D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA1CE072CD62E0B0027A90D /* HomeViewController.xib */; };
+		4FA1CE102CD634440027A90D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE0F2CD634440027A90D /* NetworkManager.swift */; };
+		4FA1CE122CD637CA0027A90D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CE112CD637CA0027A90D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4FA1CDF02CD62A6B0027A90D /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4FA1CE062CD62E0B0027A90D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4FA1CE072CD62E0B0027A90D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		4FA1CE0F2CD634440027A90D /* NetworkManager.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; tabWidth = 2; };
+		4FA1CE112CD637CA0027A90D /* Constants.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; tabWidth = 2; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 		4FA1CDFF2CD62BCF0027A90D /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				4FA1CE0F2CD634440027A90D /* NetworkManager.swift */,
+				4FA1CE112CD637CA0027A90D /* Constants.swift */,
 			);
 			name = NetworkManager;
 			sourceTree = "<group>";
@@ -375,8 +381,10 @@
 			files = (
 				4FA1CDCB2CD62A6A0027A90D /* AppDelegate.swift in Sources */,
 				4FA1CDD52CD62A6A0027A90D /* NewsApp.xcdatamodeld in Sources */,
+				4FA1CE102CD634440027A90D /* NetworkManager.swift in Sources */,
 				4FA1CDCD2CD62A6A0027A90D /* SceneDelegate.swift in Sources */,
 				4FA1CE082CD62E0B0027A90D /* HomeViewController.swift in Sources */,
+				4FA1CE122CD637CA0027A90D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
