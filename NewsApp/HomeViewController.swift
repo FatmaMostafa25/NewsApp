@@ -39,14 +39,18 @@ private extension HomeViewController {
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 8
+    return homeViewModel.articles?.articles.count ?? 0
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as! ArticlesCollectionViewCell
     cell.configureCell(image: homeViewModel.articles?.articles[indexPath.row].urlToImage ?? "", title: homeViewModel.articles?.articles[indexPath.row].title ?? "", author: homeViewModel.articles?.articles[indexPath.row].author ?? "", content: homeViewModel.articles?.articles[indexPath.row].content ?? "")
-
     return cell
+  }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let detailsViewController =  DetailsViewController()
+    detailsViewController.displayedArticle = homeViewModel.articles?.articles[indexPath.row]
+    navigationController?.pushViewController(detailsViewController, animated: true)
   }
 }
 //MARK: - UICollectionViewDelegateFlowLayout

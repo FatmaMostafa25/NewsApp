@@ -15,6 +15,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var displayedArticleAuthor: UILabel!
     @IBOutlet private weak var displayedArticleContent: UILabel!
 
+    var displayedArticle: Articles?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -25,8 +26,11 @@ class DetailsViewController: UIViewController {
 extension DetailsViewController {
   
   func configureViews() {
+      displayedArticleTitle.text = displayedArticle?.title
+      displayedArticleAuthor.text = displayedArticle?.author
+      displayedArticleContent.text = displayedArticle?.content
+
       backgroundView.layer.cornerRadius = 24.05
-      
       displayedArticleAuthor.layer.cornerRadius = 20
       displayedArticleAuthor.layer.masksToBounds = true
   }
