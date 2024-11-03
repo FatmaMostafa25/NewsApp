@@ -34,7 +34,7 @@ class HomeViewModel: HomeViewMode1Protocol {
             switch result {
             case .success(let success):
                 self.retrievedArticles = success
-                print("articles: \(success)")
+                //print("articles: \(success)")
             case .failure(let error):
                 print("Failed to get articles: \(error.localizedDescription)")
             }

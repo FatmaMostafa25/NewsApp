@@ -11,6 +11,8 @@
 		4F7ADEB82CD74C4800C9032A /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7ADEB62CD74C4800C9032A /* DetailsViewController.xib */; };
 		4F7ADEBC2CD7724300C9032A /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7ADEBA2CD7724300C9032A /* FavouriteViewController.swift */; };
 		4F7ADEBD2CD7724300C9032A /* FavouriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7ADEBB2CD7724300C9032A /* FavouriteViewController.xib */; };
+		4F7ADEBF2CD78AFA00C9032A /* DetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7ADEBE2CD78AFA00C9032A /* DetailsRepository.swift */; };
+		4F7ADEC12CD78B2100C9032A /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7ADEC02CD78B2100C9032A /* CoreDataViewModel.swift */; };
 		4FA1CDCB2CD62A6A0027A90D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CDCA2CD62A6A0027A90D /* AppDelegate.swift */; };
 		4FA1CDCD2CD62A6A0027A90D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CDCC2CD62A6A0027A90D /* SceneDelegate.swift */; };
 		4FA1CDD52CD62A6A0027A90D /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FA1CDD32CD62A6A0027A90D /* NewsApp.xcdatamodeld */; };
@@ -58,6 +60,8 @@
 		4F7ADEB62CD74C4800C9032A /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		4F7ADEBA2CD7724300C9032A /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		4F7ADEBB2CD7724300C9032A /* FavouriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteViewController.xib; sourceTree = "<group>"; };
+		4F7ADEBE2CD78AFA00C9032A /* DetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepository.swift; sourceTree = "<group>"; };
+		4F7ADEC02CD78B2100C9032A /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
 		4FA1CDC72CD62A6A0027A90D /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FA1CDCA2CD62A6A0027A90D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FA1CDCC2CD62A6A0027A90D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA8FAF62CD6CA60007F0317 /* HomeViewModel.swift */,
+				4F7ADEC02CD78B2100C9032A /* CoreDataViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA8FAF42CD6C8EB007F0317 /* HomeRepository.swift */,
+				4F7ADEBE2CD78AFA00C9032A /* DetailsRepository.swift */,
 			);
 			name = "Repository ";
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 			files = (
 				4FA8FAF52CD6C8EB007F0317 /* HomeRepository.swift in Sources */,
 				4FA8FAF72CD6CA60007F0317 /* HomeViewModel.swift in Sources */,
+				4F7ADEBF2CD78AFA00C9032A /* DetailsRepository.swift in Sources */,
 				4FA1CE162CD650520027A90D /* Articles.swift in Sources */,
 				4FA1CDCB2CD62A6A0027A90D /* AppDelegate.swift in Sources */,
 				4FA1CDD52CD62A6A0027A90D /* NewsApp.xcdatamodeld in Sources */,
@@ -585,6 +592,7 @@
 				4FA1CDCD2CD62A6A0027A90D /* SceneDelegate.swift in Sources */,
 				4FA1CE082CD62E0B0027A90D /* HomeViewController.swift in Sources */,
 				4F7ADEBC2CD7724300C9032A /* FavouriteViewController.swift in Sources */,
+				4F7ADEC12CD78B2100C9032A /* CoreDataViewModel.swift in Sources */,
 				4FA1CE192CD65FFA0027A90D /* ArticlesCollectionViewCell.swift in Sources */,
 				4FA1CE142CD650190027A90D /* CoreDataManager.swift in Sources */,
 				4FA1CE122CD637CA0027A90D /* Constants.swift in Sources */,
