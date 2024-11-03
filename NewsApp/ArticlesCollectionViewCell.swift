@@ -13,17 +13,14 @@ class ArticlesCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var articleImage: UIImageView!
     @IBOutlet private weak var articleTitle: UILabel!
     @IBOutlet private weak var articleAuthor: UILabel!
-    @IBOutlet private weak var articleContent: UITextView!
+    @IBOutlet private weak var articleContent: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCellView()
     }
     func configureCell(image: String, title: String, author: String, content: String) {
-       // if let url = URL(string: image){        articleImage.kf.setImage(with:url)}
-     //   let encodedUrl = image.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-       // articleImage.image = UIImage(named: "articleImage")
-        articleImage.kf.setImage(with: URL(string: image))
+        articleImage.kf.setImage(with: URL(string: image), placeholder: UIImage(named: "noImage"))
         articleTitle.text = title
         articleAuthor.text = author
         articleContent.text = content
@@ -33,7 +30,9 @@ class ArticlesCollectionViewCell: UICollectionViewCell {
 extension ArticlesCollectionViewCell {
     func configureCellView() {
         self.layer.cornerRadius = 11.36
-        self.articleAuthor.layer.cornerRadius = 11.25
+        self.articleAuthor.layer.cornerRadius = 6
         self.articleAuthor.layer.masksToBounds = true
+        self.articleImage.layer.cornerRadius = 10
+        self.articleImage.layer.masksToBounds = true
     }
 }

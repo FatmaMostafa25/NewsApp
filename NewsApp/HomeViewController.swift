@@ -41,13 +41,12 @@ private extension HomeViewController {
     self.pickedDate = articlesDatePicker.date
     dateFormatter.dateStyle = .short
     homeViewModel.getArticlesByDate(date: dateFormatter.string(from: pickedDate))
-  homeViewModel.bindArticlesToHomeController = {
-    DispatchQueue.main.async{
-      self.homeViewModel.articles = self.homeViewModel.retrievedArticles
-      self.homeArticlesCollectionView.reloadData()
+    homeViewModel.bindArticlesToHomeController = {
+      DispatchQueue.main.async{
+        self.homeViewModel.articles = self.homeViewModel.retrievedArticles
+        self.homeArticlesCollectionView.reloadData()
+      }
     }
-  }
-    print ("KKKKK : \(dateFormatter.string(from: pickedDate))")
   }
 }
 
@@ -87,7 +86,6 @@ extension HomeViewController {
 
 extension HomeViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    print("search:\(searchText)")
     homeViewModel.getArticles(search: searchText)
   }
         

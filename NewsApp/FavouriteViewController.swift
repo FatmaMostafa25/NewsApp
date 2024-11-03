@@ -28,7 +28,7 @@ extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDat
   }
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as! ArticlesCollectionViewCell
-      cell.configureCell(image: "articleImage" , title: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "title") as! String, author: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "author") as! String, content: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "content") as! String)
+      cell.configureCell(image:favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "image") as! String, title: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "title") as! String, author: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "author") as! String, content: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "content") as! String)
     return cell
   }
 }
