@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViews()
-    homeViewModel.getArticles()
+    homeViewModel.getArticles(search: "bitcoin")
     homeViewModel.bindArticlesToHomeController = {
       DispatchQueue.main.async{
         self.homeViewModel.articles = self.homeViewModel.retrievedArticles
@@ -79,7 +79,16 @@ extension HomeViewController {
   func configureViews() {
     homeArticlesCollectionView.dataSource = self
     homeArticlesCollectionView.delegate = self
+    articlesSearchBar.delegate = self
     let nib = UINib(nibName: "ArticlesCollectionViewCell", bundle: nil)
     homeArticlesCollectionView.register(nib, forCellWithReuseIdentifier: "articleCell")
   }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    print("search:\(searchText)")
+    homeViewModel.getArticles(search: searchText)
+  }
+        
 }

@@ -9,7 +9,7 @@ import Foundation
 
 //MARK: - HomeViewModelProtocol
 protocol HomeViewModelProtocol {
-    func getArticles ()
+    func getArticles (search: String)
     func getArticlesByDate(date: String)
     var bindArticlesToHomeController: (() -> ()) {get set}
     var retrievedArticles: NewsModel? {get set}
@@ -30,8 +30,8 @@ class HomeViewModel: HomeViewModelProtocol {
     
     var articles: NewsModel?
     
-    func getArticles () {
-        homeRepository.getHomeArticles(search: "bitcoin") { result in
+    func getArticles (search: String) {
+        homeRepository.getHomeArticles(search: search) { result in
             switch result {
             case .success(let success):
                 self.retrievedArticles = success

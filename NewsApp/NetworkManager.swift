@@ -23,7 +23,7 @@ final class NetworkService: NetworkServiceProtocol {
   //MARK: - Network Request
   func request<T>(path: Path, completion: @escaping Completion<T>) where T : Decodable {
     guard let url = createURL(path: path) else {
-      completion(.failure(Error.self as! Error))
+      completion(.failure(.invalidURL))
       return
     }
     var request = URLRequest(url: url)     
@@ -32,17 +32,17 @@ final class NetworkService: NetworkServiceProtocol {
     let session = URLSession(configuration: .default)
     let task = session.dataTask(with: request) {data, response, error in
       guard let data = data else {
-        completion(.failure(Error.self as! Error))
+        completion(.failure(.invalidResponse))
         return
       }
       do {
         let result = try JSONDecoder().decode(T.self, from: data)
         completion(.success(result))
       }catch{
-        completion(.failure(Error.self as! Error))
+        completion(.failure(.decodingFailed(error)))
       }
     }
     task.resume()
   }
 }
-public typealias Completion<T> = (_ result: Result<T, Error>) -> Void
+public typealias Completion<T> = (_ result: Result<T, NetworkError>) -> Void

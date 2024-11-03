@@ -6,6 +6,13 @@
 //
 
 import Foundation
+
+//MARK: - NetworkError
+public enum NetworkError: Error {
+  case invalidResponse
+  case invalidURL
+  case decodingFailed(Error)
+}
 //MARK: - Endpoints
 enum Path {
   case everything(search: String)
