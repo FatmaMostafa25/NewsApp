@@ -19,15 +19,13 @@ class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViews()
-    
-      homeViewModel.getArticles()
+    homeViewModel.getArticles()
     homeViewModel.bindArticlesToHomeController = {
       DispatchQueue.main.async{
         self.homeViewModel.articles = self.homeViewModel.retrievedArticles
         self.homeArticlesCollectionView.reloadData()
       }
     }
-    
   }
 }
 
@@ -64,7 +62,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeViewController {
-  
   func configureViews() {
     homeArticlesCollectionView.dataSource = self
     homeArticlesCollectionView.delegate = self

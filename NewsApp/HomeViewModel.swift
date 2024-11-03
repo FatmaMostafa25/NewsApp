@@ -15,7 +15,7 @@ protocol HomeViewMode1Protocol {
     var articles: NewsModel? {get set}
 }
 
-//MARK:- HomeViewModel
+//MARK: - HomeViewModel
 class HomeViewModel: HomeViewMode1Protocol {
     private let homeRepository: HomeRepositoryProtocol = HomeRepository ()
     

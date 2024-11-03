@@ -9,11 +9,13 @@ import Foundation
 
 //MARK: DetailsRepositoryProtocol
 protocol DetailsRepositoryProtocol {
-    func saveFavouriteArticles()
+    func saveFavouriteArticles(article: Articles)
 }
 //MARK: - DetailsRepository
 class DetailsRepository: DetailsRepositoryProtocol {
-    func saveFavouriteArticles() {
-        print("s")
+    private let coreData: CoreDataManagerProtocol = CoreDataManager.getArticleInstance()
+
+    func saveFavouriteArticles(article: Articles) {
+        coreData.saveArticle(newArticle: article)
     }
 }

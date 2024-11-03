@@ -13,7 +13,6 @@ protocol HomeRepositoryProtocol {
 }
 //MARK: - HomeRepository
 class HomeRepository: HomeRepositoryProtocol {
-    
     private let networkService: NetworkServiceProtocol = NetworkService ()
 
     func getHomeArticles(search: String, completion: @escaping Completion<NewsModel>) {

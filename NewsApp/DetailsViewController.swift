@@ -16,7 +16,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var displayedArticleContent: UILabel!
     
     var displayedArticle: Articles?
-    var coreDataViewModel : CoreDataViewModel?
+    var detailsViewModel : DetailsViewModelProtocol = DetailsViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -25,7 +25,11 @@ class DetailsViewController: UIViewController {
 //MARK: - IBActions
 private extension DetailsViewController {
     @IBAction func addToFavourite(_ sender: Any) {
-        coreDataViewModel?.articlesDataBase.saveArticle(newArticle: displayedArticle!)
+        if let article = displayedArticle {
+            detailsViewModel.saveArticleToFavourite(article: article)
+        } else {
+            print("DisaplayedArticle is nil")
+        }
         let addAlert : UIAlertController  = UIAlertController(title:displayedArticle?.title, message:"added to favourite successfully", preferredStyle: .alert)
         addAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler:{ [self] action in
             navigationController?.popViewController(animated: true)
@@ -36,7 +40,6 @@ private extension DetailsViewController {
 extension DetailsViewController {
   
   func configureViews() {
-      coreDataViewModel = CoreDataViewModel()
       displayedArticleTitle.text = displayedArticle?.title
       displayedArticleAuthor.text = displayedArticle?.author
       displayedArticleContent.text = displayedArticle?.content

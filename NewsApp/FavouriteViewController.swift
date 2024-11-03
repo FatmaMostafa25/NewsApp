@@ -6,25 +6,29 @@
 //
 
 import UIKit
+import CoreData
 
 class FavouriteViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet private weak var favouriteArticlesCollectionView: UICollectionView!
     
+    var favouriteViewModel : FavouriteViewModelProtocol = FavouriteViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        favouriteViewModel.fetchArticleFromFavourites()
     }
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension FavouriteViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 9
+      return favouriteViewModel.fetchedArticles?.count ?? 0
   }
-  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as! ArticlesCollectionViewCell
+      cell.configureCell(image: "articleImage" , title: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "title") as! String, author: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "author") as! String, content: favouriteViewModel.fetchedArticles?[indexPath.row].value(forKey: "content") as! String)
     return cell
   }
 }
