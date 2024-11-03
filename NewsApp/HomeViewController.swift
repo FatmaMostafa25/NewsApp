@@ -33,7 +33,10 @@ class HomeViewController: UIViewController {
 
 //MARK: - IBActions
 private extension HomeViewController {
-  
+  @IBAction func goToFavourite(_ sender: Any) {
+    let favouriteViewController =  FavouriteViewController()
+    navigationController?.pushViewController(favouriteViewController, animated: true)
+  }
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
