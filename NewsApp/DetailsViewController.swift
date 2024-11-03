@@ -13,7 +13,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var displayedArticleImage: UIImageView!
     @IBOutlet private weak var displayedArticleTitle: UILabel!
     @IBOutlet private weak var displayedArticleAuthor: UILabel!
-    @IBOutlet private weak var displayedArticleContent: UILabel!
+    @IBOutlet private weak var displayedArticleContent: UITextView!
     
     var displayedArticle: Articles?
     var detailsViewModel : DetailsViewModelProtocol = DetailsViewModel()
@@ -43,6 +43,8 @@ extension DetailsViewController {
       displayedArticleTitle.text = displayedArticle?.title
       displayedArticleAuthor.text = displayedArticle?.author
       displayedArticleContent.text = displayedArticle?.content
+      displayedArticleImage.kf.setImage(with: URL(string: displayedArticle?.urlToImage ?? ""), placeholder: UIImage(named: "noImage"))
+      displayedArticleImage.layer.cornerRadius = 10
       backgroundView.layer.cornerRadius = 24.05
       displayedArticleAuthor.layer.cornerRadius = 20
       displayedArticleAuthor.layer.masksToBounds = true

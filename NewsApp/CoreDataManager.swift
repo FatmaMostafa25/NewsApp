@@ -45,7 +45,6 @@ class CoreDataManager : CoreDataManagerProtocol {
     article.setValue(newArticle.urlToImage, forKey: "image")
     article.setValue(newArticle.publishedAt, forKey: "publishedAt")
     article.setValue(newArticle.content, forKey: "content")
-    print("saved!!!")
     try?self.managedContext.save()
   }
   
