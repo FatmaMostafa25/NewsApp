@@ -14,9 +14,20 @@ class HomeViewController: UIViewController {
   @IBOutlet private weak var articlesDatePicker: UIDatePicker!
   @IBOutlet private weak var homeArticlesCollectionView: UICollectionView!
   
+  var homeViewModel: HomeViewMode1Protocol = HomeViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     configureViews()
+    
+      homeViewModel.getArticles()
+    homeViewModel.bindArticlesToHomeController = {
+      DispatchQueue.main.async{
+        self.homeViewModel.articles = self.homeViewModel.retrievedArticles
+        self.homeArticlesCollectionView.reloadData()
+      }
+    }
+    
   }
 }
 
@@ -33,6 +44,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as! ArticlesCollectionViewCell
+    cell.configureCell(image: homeViewModel.articles?.articles[indexPath.row].urlToImage ?? "", title: homeViewModel.articles?.articles[indexPath.row].title ?? "", author: homeViewModel.articles?.articles[indexPath.row].author ?? "", content: homeViewModel.articles?.articles[indexPath.row].content ?? "")
+
     return cell
   }
 }

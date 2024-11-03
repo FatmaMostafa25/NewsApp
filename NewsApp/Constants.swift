@@ -8,12 +8,11 @@
 import Foundation
 //MARK: - Endpoints
 enum Path {
-  case everything
-  
+  case everything(search: String)
   var stringValue: String {
     switch self {
-    case .everything:
-      return ""
+    case let .everything(search: search):
+      return "everything?q=\(search)"
     }
   }
 }

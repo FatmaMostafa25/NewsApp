@@ -26,7 +26,9 @@ final class NetworkService: NetworkServiceProtocol {
       completion(.failure(Error.self as! Error))
       return
     }
-    let request = URLRequest(url: url)        
+    var request = URLRequest(url: url)     
+    let key = "2b9433e619e647e2bb453b2ba94d0dcc"
+    request.addValue(key, forHTTPHeaderField: "x-api-key")
     let session = URLSession(configuration: .default)
     let task = session.dataTask(with: request) {data, response, error in
       guard let data = data else {
