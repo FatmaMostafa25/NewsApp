@@ -8,15 +8,16 @@
 import Foundation
 
 //MARK: - HomeViewModelProtocol
-protocol HomeViewMode1Protocol {
+protocol HomeViewModelProtocol {
     func getArticles ()
+    func getArticlesByDate(date: String)
     var bindArticlesToHomeController: (() -> ()) {get set}
     var retrievedArticles: NewsModel? {get set}
     var articles: NewsModel? {get set}
 }
 
 //MARK: - HomeViewModel
-class HomeViewModel: HomeViewMode1Protocol {
+class HomeViewModel: HomeViewModelProtocol {
     private let homeRepository: HomeRepositoryProtocol = HomeRepository ()
     
     var bindArticlesToHomeController: (() -> ()) = {}
@@ -35,6 +36,16 @@ class HomeViewModel: HomeViewMode1Protocol {
             case .success(let success):
                 self.retrievedArticles = success
                 //print("articles: \(success)")
+            case .failure(let error):
+                print("Failed to get articles: \(error.localizedDescription)")
+            }
+        }
+    }
+    func getArticlesByDate(date: String) {
+        homeRepository.getArticlesFilteredByDate(date: date) { result in
+            switch result {
+            case .success(let success):
+                self.retrievedArticles = success
             case .failure(let error):
                 print("Failed to get articles: \(error.localizedDescription)")
             }

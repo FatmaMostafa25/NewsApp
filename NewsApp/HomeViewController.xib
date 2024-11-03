@@ -54,6 +54,9 @@
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="2n4-Oi-Ow6">
                     <rect key="frame" x="231" y="214" width="122" height="34.333333333333343"/>
                     <color key="tintColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="pickDate:" destination="-1" eventType="valueChanged" id="7iD-JC-CBa"/>
+                    </connections>
                 </datePicker>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj1-yD-pIL">
                     <rect key="frame" x="24" y="222" width="41" height="21"/>

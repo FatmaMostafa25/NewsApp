@@ -14,7 +14,9 @@ class HomeViewController: UIViewController {
   @IBOutlet private weak var articlesDatePicker: UIDatePicker!
   @IBOutlet private weak var homeArticlesCollectionView: UICollectionView!
   
-  var homeViewModel: HomeViewMode1Protocol = HomeViewModel()
+  var homeViewModel: HomeViewModelProtocol = HomeViewModel()
+  let dateFormatter : DateFormatter = DateFormatter()
+  var pickedDate : Date = Date()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,6 +36,18 @@ private extension HomeViewController {
   @IBAction func goToFavourite(_ sender: Any) {
     let favouriteViewController =  FavouriteViewController()
     navigationController?.pushViewController(favouriteViewController, animated: true)
+  }
+  @IBAction func pickDate(_ sender: Any){
+    self.pickedDate = articlesDatePicker.date
+    dateFormatter.dateStyle = .short
+    homeViewModel.getArticlesByDate(date: dateFormatter.string(from: pickedDate))
+  homeViewModel.bindArticlesToHomeController = {
+    DispatchQueue.main.async{
+      self.homeViewModel.articles = self.homeViewModel.retrievedArticles
+      self.homeArticlesCollectionView.reloadData()
+    }
+  }
+    print ("KKKKK : \(dateFormatter.string(from: pickedDate))")
   }
 }
 
